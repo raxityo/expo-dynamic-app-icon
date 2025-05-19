@@ -1,7 +1,15 @@
-export function setAppIcon(name: string | null): string | false {
-  throw new Error("setAppIcon is not supported on web");
+import { DynamicAppIconRegistry } from "./types";
+
+export type IconName = DynamicAppIconRegistry["IconName"];
+
+export function setAppIcon(
+  name: IconName | null
+): IconName | "DEFAULT" | false {
+  console.error("setAppIcon is not supported on web");
+  return false;
 }
 
-export function getAppIcon(): string {
-  throw new Error("getAppIcon is not supported on web");
+export function getAppIcon(): IconName | "DEFAULT" {
+  console.error("getAppIcon is not supported on web");
+  return "";
 }
